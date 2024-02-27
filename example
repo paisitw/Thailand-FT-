@@ -1,0 +1,8 @@
+sensors:
+    - platform: template
+      sensors:
+ 
+        ft:
+            value_template: "{{ ((states('sensor.pea_ft') | regex_replace(find=',',replace='',ignorecase=False) | float(4) ))  }}"
+            unit_of_measurement: "THB"
+ 
